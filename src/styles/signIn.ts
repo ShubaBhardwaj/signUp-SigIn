@@ -2,10 +2,12 @@ import { StyleSheet } from "react-native";
 
 const signInStyles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: "#F5F5F2",
     display: "flex",
-    justifyContent: "center",
+    // justifyContent: "center",
+    paddingTop: 60,
+    paddingBottom: 40,
     alignItems: "center",
     paddingHorizontal: 20,
   },

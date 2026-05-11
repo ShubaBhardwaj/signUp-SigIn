@@ -1,56 +1,67 @@
-# Welcome to your Expo app 👋
+# 🏥 Authentication Module
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A beautiful, sleek, and fully functional Authentication flow built with React Native (Expo). This project handles user registration, login, and secure session management with a FreeAPI.app.
 
-## Get started
+## ✨ Features
+- **Scrollable & Responsive UI:** Fully accessible form fields using `KeyboardAvoidingView` and `ScrollView` to ensure it works beautifully on all screen sizes.
+- **JWT Session Management:** Utilizes `expo-secure-store` to keep `access_token` and `refresh_token` secure on the device.
+- **Robust Error Handling:** Real-time user feedback on validation errors (e.g., catching 422 HTTP responses).
+- **Backend Integration:** Connects smoothly with the backend service for realistic User flows (Sign up, Sign In, Logout).
+- **Clean State Management:** Conditional rendering of Home / Auth pages based on live session state without needing page reloads.
 
-1. Install dependencies
+## 📸 App Preview
 
-   ```bash
-   npm install
-   ```
+### 🎥 Screen Recording
+Check out the full authentication flow in action:
+<br/>
+<video src="./assets/screenshots/SignUp%26SigIn.mov" width="320" controls autoplay loop></video>
+<br/>
+*(If the video doesn't load automatically, [click here to view it](./assets/screenshots/SignUp%26SigIn.mov))*
 
-2. Start the app
+### 📱 Screenshots
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+  <img src="./assets/screenshots/SignUp%26SigIn2.png" width="30%" alt="Sign In Screen" />
+  <img src="./assets/screenshots/SignUp%26SigIn3.png" width="30%" alt="Sign Up Screen" />
+  <img src="./assets/screenshots/SignUp%26SigIn1.png" width="30%" alt="Home Screen" />
+</div>
 
-   ```bash
-   npx expo start
-   ```
+## 🚀 Getting Started
 
-In the output, you'll find options to open the app in a
+### 1. Prerequisites
+- Node.js (v18 or higher)
+- Expo CLI
+- Expo Go app on your physical device
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### 2. Installation
+Clone the repository and install the dependencies:
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 3. Run the App
+Start the Expo development server:
+```bash
+npx expo start
+```
+Scann the qr code with [expo go app](https://expo.dev/client).
 
-### Other setup steps
+## 📁 Project Structure
+```text
+src/
+├── app/
+│   └── index.tsx          # Root entry and State manager (Conditional Routing)
+├── components/
+│   ├── authPage.tsx       # UI for Sign In & Sign Up
+│   └── home.tsx           # Home screen with Logout functionality
+├── services/
+│   ├── api.ts             # Axios instance setup
+│   ├── auth.service.ts    # API methods (login, register, logout)
+│   └── token.storage.ts   # SecureStore wrapper for JWT tokens
+└── styles/
+    └── signIn.ts          # Stylesheet for the Authentication views
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🛠️ Built With
+- **React Native** & **Expo**
+- **Axios** (API Requests)
+- **Expo Secure Store** (Token encryption)
